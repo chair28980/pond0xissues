@@ -30,16 +30,3 @@ export function formatRelativeTime(date: string): string {
   if (diffInDays < 365) return `${Math.floor(diffInDays / 30)} months ago`;
   return `${Math.floor(diffInDays / 365)} years ago`;
 }
-
-// Tutorial state management
-export function getTutorialState(): { hasSeenTutorial: boolean } {
-  if (typeof window === 'undefined') return { hasSeenTutorial: false };
-  return { hasSeenTutorial: false }; // Always show tutorial for demo purposes
-}
-
-export function saveTutorialState(completed: boolean): void {
-  if (typeof window === 'undefined') return;
-  // In a real app, you would save to localStorage, but for Claude artifacts we'll skip persistence
-  console.log('Tutorial completed:', completed);
-}
-

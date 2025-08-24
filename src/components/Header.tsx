@@ -1,7 +1,6 @@
 'use client';
 
-import { Github, BookOpen } from 'lucide-react';
-import { useTutorial } from '@/hooks/useTutorial';
+import { Github } from 'lucide-react';
 
 interface HeaderProps {
   totalIssues: number;
@@ -10,7 +9,6 @@ interface HeaderProps {
 }
 
 export function Header({ totalIssues, openIssues, closedIssues }: HeaderProps) {
-  const { startTutorial } = useTutorial();
 
   return (
     <header className="glass-card p-6 mb-8">
@@ -30,14 +28,6 @@ export function Header({ totalIssues, openIssues, closedIssues }: HeaderProps) {
         </div>
 
         <div className="flex items-center gap-4">
-          <button
-            onClick={startTutorial}
-            className="glass-button px-4 py-2 rounded-lg flex items-center gap-2 text-sm font-medium hover:text-primary-400 transition-colors"
-          >
-            <BookOpen className="w-4 h-4" />
-            <span className="hidden sm:inline">GitHub Tutorial</span>
-          </button>
-          
           <a
             href="https://github.com/Cary0x/pond0x-issues"
             target="_blank"

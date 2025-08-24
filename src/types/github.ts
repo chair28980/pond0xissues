@@ -31,24 +31,3 @@ export interface IssueFilters {
   search: string;
   sort: 'newest' | 'oldest' | 'most_commented' | 'recently_updated';
 }
-
-export interface TutorialStep {
-  id: string;
-  title: string;
-  description: string;
-  content: React.ReactNode;
-  targetElement?: string;
-  action?: {
-    type: 'link' | 'button' | 'highlight';
-    url?: string;
-    text: string;
-  };
-}
-
-export interface TutorialState {
-  isActive: boolean;
-  currentStep: number;
-  completed: boolean;
-  hasSeenTutorial: boolean;
-}
-

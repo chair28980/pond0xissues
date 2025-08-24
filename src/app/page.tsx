@@ -3,9 +3,7 @@
 import { Header } from '@/components/Header';
 import { FilterBar } from '@/components/FilterBar';
 import { IssuesList } from '@/components/IssuesList';
-import { QuickStartCard } from '@/components/tutorial/QuickStartCard';
-import { GitHubTutorialButton } from '@/components/tutorial/GitHubTutorialButton';
-import { TutorialModal } from '@/components/tutorial/TutorialModal';
+
 import { useIssues } from '@/hooks/useIssues';
 
 export default function HomePage() {
@@ -19,14 +17,6 @@ export default function HomePage() {
         closedIssues={stats.closed}
       />
 
-      {/* Quick Start Section */}
-      <QuickStartCard />
-
-      {/* Floating Tutorial Button for Mobile */}
-      <div className="fixed bottom-4 right-4 z-40 md:hidden">
-        <GitHubTutorialButton />
-      </div>
-
       <FilterBar
         filters={filters}
         onFiltersChange={setFilters}
@@ -38,9 +28,6 @@ export default function HomePage() {
         error={error}
         onRefresh={refetch}
       />
-
-      {/* Tutorial Modal */}
-      <TutorialModal />
 
       {/* Footer */}
       <footer className="mt-16 text-center">

@@ -29,26 +29,6 @@
   .gradient-text {
     @apply bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent;
   }
-
-  .tutorial-highlight {
-    @apply ring-4 ring-primary-400 ring-opacity-75 animate-pulse-glow;
-  }
-
-  .step-indicator {
-    @apply w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300;
-  }
-
-  .step-active {
-    @apply bg-primary-500 text-white shadow-lg;
-  }
-
-  .step-completed {
-    @apply bg-primary-600 text-white;
-  }
-
-  .step-pending {
-    @apply bg-white/10 text-gray-400 border border-white/20;
-  }
 }
 
 /* Custom scrollbar */
@@ -68,14 +48,4 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(16, 185, 129, 0.7);
-}
-
-/* Tutorial overlay */
-.tutorial-overlay {
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(4px);
-}
-
-.tutorial-spotlight {
-  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.8);
 }
