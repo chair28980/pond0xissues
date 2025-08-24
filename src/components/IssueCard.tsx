@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { ExternalLink, MessageCircle, Calendar, User } from 'lucide-react';
 import { GitHubIssue } from '@/types/github';
 import { StatusIcon } from '@/components/ui/StatusIcon';
@@ -13,8 +14,21 @@ interface IssueCardProps {
 }
 
 export function IssueCard({ issue, compact = false }: IssueCardProps) {
+  const router = useRouter();
+
+  const handleCardClick = (e: React.MouseEvent) => {
+    // Don't navigate if clicking on a link or interactive element
+    if ((e.target as HTMLElement).closest('a, button')) {
+      return;
+    }
+    router.push(`/issues/${issue.number}`);
+  };
+
   return (
-    <article className="pond-card p-6 hover:bg-white/10 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl group">
+    <article 
+      className="pond-card p-6 hover:bg-white/10 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl group cursor-pointer"
+      onClick={handleCardClick}
+    >
       <div className="flex items-start gap-4">
         <div className="flex-shrink-0 mt-1">
           <StatusIcon status={issue.state} />
@@ -24,15 +38,8 @@ export function IssueCard({ issue, compact = false }: IssueCardProps) {
           {/* Header */}
           <div className="flex items-start justify-between gap-4">
             <div className="flex-1">
-              <h3 className="text-lg font-semibold text-white mb-2 leading-tight">
-                <a
-                  href={issue.html_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-primary-400 transition-colors hover:underline"
-                >
-                  {truncateText(issue.title, 80)}
-                </a>
+              <h3 className="text-lg font-semibold text-white mb-2 leading-tight group-hover:text-primary-400 transition-colors">
+                {truncateText(issue.title, 80)}
               </h3>
               
               <div className="flex items-center gap-2 text-sm text-gray-400 mb-3">
@@ -50,6 +57,7 @@ export function IssueCard({ issue, compact = false }: IssueCardProps) {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-primary-400 transition-colors"
+                    onClick={(e) => e.stopPropagation()}
                   >
                     {issue.user.login}
                   </a>
@@ -70,6 +78,7 @@ export function IssueCard({ issue, compact = false }: IssueCardProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-primary-400 transition-colors"
+                onClick={(e) => e.stopPropagation()}
               >
                 <ExternalLink className="w-4 h-4" />
               </a>
