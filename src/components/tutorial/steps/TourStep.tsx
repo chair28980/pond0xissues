@@ -8,9 +8,7 @@ import {
   Filter, 
   Search, 
   Star,
-  GitBranch,
-  FileText,
-  Users
+  GitBranch
 } from 'lucide-react';
 import { TutorialStep, ListStepLayout, StepCard, StepList } from '../TutorialStep';
 import { TutorialStepProps } from '@/types/tutorial';
@@ -75,24 +73,11 @@ export function TourStep(props: TutorialStepProps) {
           icon={<GitBranch className="w-6 h-6" />}
           variant="highlighted"
         >
-          <p className="mb-4">
+          <p>
             A repository (or &quot;repo&quot;) is like a project folder that contains all the code, 
-            documentation, and history of a project. The Pond0x repository is where:
+            documentation, and history of a project. It serves as the central hub where developers 
+            collaborate, track issues, and manage the entire lifecycle of a software project.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
-            <div className="flex items-center gap-2 p-3 bg-white/5 rounded-lg">
-              <FileText className="w-4 h-4 text-primary-400" />
-              <span>Code lives</span>
-            </div>
-            <div className="flex items-center gap-2 p-3 bg-white/5 rounded-lg">
-              <MessageSquare className="w-4 h-4 text-secondary-400" />
-              <span>Issues are tracked</span>
-            </div>
-            <div className="flex items-center gap-2 p-3 bg-white/5 rounded-lg">
-              <Users className="w-4 h-4 text-accent-pink" />
-              <span>Community gathers</span>
-            </div>
-          </div>
         </StepCard>
 
         {/* Repository Features */}

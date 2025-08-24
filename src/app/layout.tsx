@@ -4,7 +4,7 @@ import './globals.css';
 import { QueryProvider } from '@/components/QueryProvider';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { TutorialProvider } from '@/components/tutorial/TutorialProvider';
-import { TutorialOverlay } from '@/components/tutorial/TutorialOverlay';
+import { ConditionalTutorialOverlay } from '@/components/ConditionalTutorialOverlay';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
@@ -65,8 +65,8 @@ export default function RootLayout({
                   {children}
                 </div>
 
-                {/* Tutorial Overlay */}
-                <TutorialOverlay />
+                {/* Tutorial Overlay - Only show on non-tutorial pages */}
+                <ConditionalTutorialOverlay />
               </div>
             </TutorialProvider>
           </QueryProvider>

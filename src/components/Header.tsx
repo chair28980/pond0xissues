@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { Github, GraduationCap } from 'lucide-react';
-import { useTutorial } from './tutorial/TutorialProvider';
 import { hasCompletedTutorial } from '@/lib/utils';
 
 interface HeaderProps {
@@ -12,7 +12,7 @@ interface HeaderProps {
 }
 
 export function Header({ totalIssues, openIssues, closedIssues }: HeaderProps) {
-  const { openTutorial } = useTutorial();
+  const router = useRouter();
   const [tutorialCompleted, setTutorialCompleted] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
@@ -36,7 +36,7 @@ export function Header({ totalIssues, openIssues, closedIssues }: HeaderProps) {
         <div className="flex items-center gap-4">
           {/* Tutorial Button */}
           <button
-            onClick={openTutorial}
+            onClick={() => router.push('/tutorial/welcome')}
             className={`gradient-button flex items-center gap-2 text-sm font-semibold relative overflow-hidden ${
               isMounted && !tutorialCompleted 
                 ? 'animate-pulse shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:shadow-[0_0_30px_rgba(59,130,246,0.6)]' 
