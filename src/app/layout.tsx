@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const metadata: Metadata = {
   title: 'Pond0x Issues Dashboard',
-  description: 'A beautiful dashboard for tracking Pond0x GitHub issues',
+  description: 'Track and manage Pond0x project issues',
   keywords: ['pond0x', 'github', 'issues', 'dashboard', 'nft'],
   authors: [{ name: 'Pond0x Team' }],
   viewport: 'width=device-width, initial-scale=1',
@@ -17,12 +17,22 @@ export const metadata: Metadata = {
     title: 'Pond0x Issues Dashboard',
     description: 'Track and manage Pond0x project issues',
     type: 'website',
+    url: 'https://pond0xissues.vercel.app/',
     siteName: 'Pond0x Issues',
+    images: [
+      {
+        url: 'https://pond0xissues.vercel.app/copeman.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'Pond0x Issues Dashboard',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Pond0x Issues Dashboard',
     description: 'Track and manage Pond0x project issues',
+    images: ['https://pond0xissues.vercel.app/copeman.jpeg'],
   },
 };
 
