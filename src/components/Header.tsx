@@ -30,10 +30,10 @@ export function Header({ totalIssues, openIssues, closedIssues }: HeaderProps) {
           {/* Tutorial Button */}
           <button
             onClick={openTutorial}
-            className={`glass-button flex items-center gap-2 text-sm font-medium ${
+            className={`gradient-button flex items-center gap-2 text-sm font-semibold relative overflow-hidden ${
               !tutorialCompleted 
-                ? 'border-primary-500/50 bg-primary-500/10 text-primary-300 animate-pulse' 
-                : 'text-gray-300 hover:text-white'
+                ? 'animate-pulse shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:shadow-[0_0_30px_rgba(59,130,246,0.6)]' 
+                : 'shadow-lg hover:shadow-xl'
             }`}
             title={tutorialCompleted ? 'Restart GitHub tutorial' : 'Learn how to use GitHub'}
           >
@@ -42,7 +42,10 @@ export function Header({ totalIssues, openIssues, closedIssues }: HeaderProps) {
               {tutorialCompleted ? 'Tutorial' : 'Learn GitHub'}
             </span>
             {!tutorialCompleted && (
-              <div className="w-2 h-2 bg-primary-400 rounded-full animate-pulse" />
+              <div className="w-2 h-2 bg-white rounded-full animate-pulse ml-1" />
+            )}
+            {!tutorialCompleted && (
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] animate-[shimmer_2s_infinite] pointer-events-none" />
             )}
           </button>
 
