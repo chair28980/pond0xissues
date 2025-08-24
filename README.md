@@ -1,4 +1,8 @@
+![](pond0x-issues/src/app/favicon.ico)
+
 # Pond0x Issues Frontend
+
+[pond0xissues.vercel.app](https://pond0xissues.vercel.app)
 
 This website displays and tracks issues from the official Pond0x issues repository. All issues are sourced directly from:
 
