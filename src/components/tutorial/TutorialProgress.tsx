@@ -94,21 +94,7 @@ export function TutorialProgress({
                 )}
               </div>
 
-              {/* Step Label */}
-              <div className="text-center max-w-16">
-                <span
-                  className={cn(
-                    'text-xs font-medium transition-colors duration-300',
-                    {
-                      'text-white': isCompleted || isCurrent,
-                      'text-gray-400': isFuture,
-                      'gradient-text': isCurrent && !isCompleted,
-                    }
-                  )}
-                >
-                  {step.title.split(' ')[0]}
-                </span>
-              </div>
+
 
               {/* Connection Line (except for last step) */}
               {index < totalSteps - 1 && (

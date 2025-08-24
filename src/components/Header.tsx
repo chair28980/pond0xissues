@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { Github, GraduationCap } from 'lucide-react';
 import { useTutorial } from './tutorial/TutorialProvider';
 import { hasCompletedTutorial } from '@/lib/utils';
@@ -12,7 +13,13 @@ interface HeaderProps {
 
 export function Header({ totalIssues, openIssues, closedIssues }: HeaderProps) {
   const { openTutorial } = useTutorial();
-  const tutorialCompleted = hasCompletedTutorial();
+  const [tutorialCompleted, setTutorialCompleted] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+    setTutorialCompleted(hasCompletedTutorial());
+  }, []);
 
   return (
     <header className="pond-card p-8 mb-8">
@@ -31,20 +38,20 @@ export function Header({ totalIssues, openIssues, closedIssues }: HeaderProps) {
           <button
             onClick={openTutorial}
             className={`gradient-button flex items-center gap-2 text-sm font-semibold relative overflow-hidden ${
-              !tutorialCompleted 
+              isMounted && !tutorialCompleted 
                 ? 'animate-pulse shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:shadow-[0_0_30px_rgba(59,130,246,0.6)]' 
                 : 'shadow-lg hover:shadow-xl'
             }`}
-            title={tutorialCompleted ? 'Restart GitHub tutorial' : 'Learn how to use GitHub'}
+            title={isMounted && tutorialCompleted ? 'Restart GitHub tutorial' : 'Learn how to use GitHub'}
           >
             <GraduationCap className="w-4 h-4" />
             <span className="hidden sm:inline">
-              {tutorialCompleted ? 'Tutorial' : 'Learn GitHub'}
+              {isMounted && tutorialCompleted ? 'Tutorial' : 'Learn GitHub'}
             </span>
-            {!tutorialCompleted && (
+            {isMounted && !tutorialCompleted && (
               <div className="w-2 h-2 bg-white rounded-full animate-pulse ml-1" />
             )}
-            {!tutorialCompleted && (
+            {isMounted && !tutorialCompleted && (
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] animate-[shimmer_2s_infinite] pointer-events-none" />
             )}
           </button>

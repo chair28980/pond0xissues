@@ -21,7 +21,7 @@ export function WelcomeStep(props: TutorialStepProps) {
                 You're in the right place!
               </h3>
               <p className="text-lg text-gray-300 leading-relaxed">
-                Contributing to open source projects like Pond0x is easier than you think. 
+                Contributing to open source projects is easy. 
                 Whether you're reporting a bug, suggesting a feature, or just asking a question, 
                 your voice matters in our community.
               </p>
