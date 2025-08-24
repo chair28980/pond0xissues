@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { Github, GraduationCap } from 'lucide-react';
+import { Github, GraduationCap, AlertTriangle } from 'lucide-react';
 import { hasCompletedTutorial } from '@/lib/utils';
 
 interface HeaderProps {
@@ -34,6 +34,18 @@ export function Header({ totalIssues, openIssues, closedIssues }: HeaderProps) {
         </div>
 
         <div className="flex items-center gap-4">
+          {/* Report Issue Button */}
+          <a
+            href="https://github.com/Cary0x/pond0x-issues/issues/new/choose"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="gradient-button flex items-center gap-2 text-sm font-semibold"
+            title="Report a bug or request a feature"
+          >
+            <AlertTriangle className="w-4 h-4" />
+            <span className="hidden sm:inline">Report an Issue</span>
+          </a>
+
           {/* Tutorial Button */}
           <button
             onClick={() => router.push('/tutorial/welcome')}
