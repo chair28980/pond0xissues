@@ -1,3 +1,11 @@
+# Pond0x Issues Frontend
+
+This website displays and tracks issues from the official Pond0x issues repository. All issues are sourced directly from:
+
+**📋 Source Repository:** [Cary0x/pond0x-issues](https://github.com/Cary0x/pond0x-issues)
+
+---
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
