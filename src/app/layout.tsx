@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { QueryProvider } from '@/components/QueryProvider';
@@ -11,8 +11,6 @@ export const metadata: Metadata = {
   description: 'Track and manage Pond0x project issues',
   keywords: ['pond0x', 'github', 'issues', 'dashboard', 'nft'],
   authors: [{ name: 'Pond0x Team' }],
-  viewport: 'width=device-width, initial-scale=1',
-  themeColor: '#10b981',
   openGraph: {
     title: 'Pond0x Issues Dashboard',
     description: 'Track and manage Pond0x project issues',
@@ -34,6 +32,12 @@ export const metadata: Metadata = {
     description: 'Track and manage Pond0x project issues',
     images: ['https://pond0xissues.vercel.app/copeman.jpeg'],
   },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#10b981',
 };
 
 export default function RootLayout({
