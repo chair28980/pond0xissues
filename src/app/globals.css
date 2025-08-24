@@ -69,3 +69,13 @@
   background: rgba(59, 130, 246, 0.3);
   color: white;
 }
+
+/* Custom animations */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) skewX(-12deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-12deg);
+  }
+}

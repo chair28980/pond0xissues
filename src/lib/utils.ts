@@ -41,3 +41,64 @@ export function formatDate(date: string): string {
     minute: '2-digit',
   });
 }
+
+import { UserProgress, TutorialState } from '@/types/tutorial';
+
+// Tutorial-related utilities
+export function getTutorialProgress(): UserProgress | null {
+  if (typeof window === 'undefined') return null;
+  
+  try {
+    const stored = localStorage.getItem('pond0x-tutorial-progress');
+    return stored ? JSON.parse(stored) : null;
+  } catch {
+    return null;
+  }
+}
+
+export function saveTutorialProgress(progress: UserProgress): void {
+  if (typeof window === 'undefined') return;
+  
+  try {
+    localStorage.setItem('pond0x-tutorial-progress', JSON.stringify(progress));
+  } catch {
+    // Silently fail if localStorage is not available
+  }
+}
+
+export function getTutorialState(): Partial<TutorialState> | null {
+  if (typeof window === 'undefined') return null;
+  
+  try {
+    const stored = localStorage.getItem('pond0x-tutorial-state');
+    return stored ? JSON.parse(stored) : null;
+  } catch {
+    return null;
+  }
+}
+
+export function saveTutorialState(state: Partial<TutorialState>): void {
+  if (typeof window === 'undefined') return;
+  
+  try {
+    localStorage.setItem('pond0x-tutorial-state', JSON.stringify(state));
+  } catch {
+    // Silently fail if localStorage is not available
+  }
+}
+
+export function clearTutorialData(): void {
+  if (typeof window === 'undefined') return;
+  
+  try {
+    localStorage.removeItem('pond0x-tutorial-state');
+    localStorage.removeItem('pond0x-tutorial-progress');
+  } catch {
+    // Silently fail if localStorage is not available
+  }
+}
+
+export function hasCompletedTutorial(): boolean {
+  const progress = getTutorialProgress();
+  return progress?.completedAt != null;
+}
