@@ -22,7 +22,7 @@ export function LabelBadge({ label, size = 'sm', className }: LabelBadgeProps) {
   return (
     <span
       className={cn(
-        'inline-flex items-center rounded-full font-medium transition-all hover:scale-105',
+        'inline-flex items-center rounded-full font-semibold transition-all hover:scale-105 shadow-lg',
         sizeClasses[size],
         className
       )}

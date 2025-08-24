@@ -19,15 +19,29 @@
 
 @layer components {
   .glass-card {
-    @apply bg-glass border border-white/20 backdrop-blur-glass rounded-2xl shadow-2xl;
+    @apply bg-gradient-card border border-white/20 backdrop-blur-glass rounded-2xl shadow-2xl;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1);
   }
   
   .glass-button {
-    @apply bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-glass transition-all duration-300;
+    @apply bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-glass transition-all duration-300 rounded-xl;
+  }
+  
+  .gradient-button {
+    @apply bg-gradient-button text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300;
   }
   
   .gradient-text {
-    @apply bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent;
+    @apply bg-gradient-text bg-clip-text text-transparent font-bold;
+  }
+  
+  .pond-card {
+    @apply bg-gradient-card border border-white/10 backdrop-blur-xl rounded-3xl shadow-2xl;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+    box-shadow: 
+      0 25px 50px -12px rgba(0, 0, 0, 0.4),
+      0 0 0 1px rgba(255, 255, 255, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 }
 
@@ -37,15 +51,21 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(16, 185, 129, 0.5);
-  border-radius: 4px;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+  border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(16, 185, 129, 0.7);
+  background: linear-gradient(135deg, #60a5fa 0%, #a855f7 50%, #f472b6 100%);
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(59, 130, 246, 0.3);
+  color: white;
 }

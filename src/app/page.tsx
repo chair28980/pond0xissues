@@ -31,16 +31,16 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="mt-16 text-center">
-        <div className="glass-card p-6">
-          <p className="text-gray-400 text-sm">
-            Built with ❤️ for the Pond0x community •{' '}
+        <div className="pond-card p-8">
+          <p className="text-gray-300 text-base font-medium">
+            Exclaimed with ❤️ for the Pond0x community •{' '}
             <a
               href="https://github.com/Cary0x/pond0x-issues"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary-400 hover:text-primary-300 transition-colors"
+              className="text-white hover:text-cyan-400 transition-colors font-semibold underline underline-offset-2"
             >
-              View Source
+              View source
             </a>
           </p>
         </div>

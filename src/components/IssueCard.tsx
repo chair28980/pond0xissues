@@ -14,7 +14,7 @@ interface IssueCardProps {
 
 export function IssueCard({ issue, compact = false }: IssueCardProps) {
   return (
-    <article className="glass-card p-6 hover:bg-white/10 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl">
+    <article className="pond-card p-6 hover:bg-white/10 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl group">
       <div className="flex items-start gap-4">
         <div className="flex-shrink-0 mt-1">
           <StatusIcon status={issue.state} />
