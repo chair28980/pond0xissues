@@ -156,7 +156,7 @@ export default function TutorialPage() {
                 GitHub Tutorial for Pond0x
               </h1>
               <p className="text-gray-400">
-                Learn how to contribute to the Pond0x project on GitHub
+                Learn how to submit issues on GitHub
               </p>
             </div>
           </div>

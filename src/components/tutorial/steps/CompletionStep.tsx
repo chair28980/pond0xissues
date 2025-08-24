@@ -64,7 +64,7 @@ export function CompletionStep(props: TutorialStepProps) {
   return (
     <TutorialStep
       title="🎉 Congratulations!"
-      description="You've completed the GitHub tutorial and are now ready to contribute to the Pond0x project!"
+      description="You've completed the GitHub tutorial and are now ready to submit issues!"
       {...props}
       showProgress={false}
     >
