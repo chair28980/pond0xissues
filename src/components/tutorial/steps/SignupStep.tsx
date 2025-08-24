@@ -72,7 +72,7 @@ export function SignupStep(props: TutorialStepProps) {
               <div>
                 <h4 className="font-semibold text-white mb-2">Already have GitHub?</h4>
                 <p className="text-sm">
-                  Perfect! You can skip to the next step. We'll show you around 
+                  Perfect! You can skip to the next step. We&apos;ll show you around 
                   the Pond0x repository and how to navigate issues.
                 </p>
               </div>
@@ -92,10 +92,8 @@ export function SignupStep(props: TutorialStepProps) {
                 rel="noopener noreferrer"
                 className="gradient-button inline-flex items-center gap-2 w-full justify-center"
                 onClick={() => {
-                  // Mark that user clicked signup
-                  if (props.onNext) {
-                    // This will be handled by the parent component
-                  }
+                  // Mark that user clicked signup - this will be handled by the parent component
+                  console.log('User clicked signup button');
                 }}
               >
                 <Github className="w-4 h-4" />
@@ -104,7 +102,7 @@ export function SignupStep(props: TutorialStepProps) {
               </a>
               
               <p className="text-xs text-gray-400 text-center mt-2">
-                Opens in a new tab – come back when you're done!
+                Opens in a new tab – come back when you&apos;re done!
               </p>
             </div>
           </StepCard>

@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface TutorialState {
   isOpen: boolean;
   currentStep: number;
@@ -59,7 +61,7 @@ export const TUTORIAL_STEPS: TutorialStep[] = [
     id: 'welcome',
     title: 'Welcome to GitHub Issues',
     description: 'Let\'s help you get started with contributing to the Pond0x project',
-    component: null as any, // Will be filled with actual components
+    component: null as unknown as React.ComponentType<TutorialStepProps>, // Will be filled with actual components
     canSkip: true,
     isRequired: false,
   },
@@ -67,7 +69,7 @@ export const TUTORIAL_STEPS: TutorialStep[] = [
     id: 'signup',
     title: 'Create GitHub Account',
     description: 'Sign up for GitHub to start contributing',
-    component: null as any,
+    component: null as unknown as React.ComponentType<TutorialStepProps>,
     canSkip: true,
     isRequired: false,
   },
@@ -75,7 +77,7 @@ export const TUTORIAL_STEPS: TutorialStep[] = [
     id: 'tour',
     title: 'Repository Tour',
     description: 'Learn about issues, labels, and navigation',
-    component: null as any,
+    component: null as unknown as React.ComponentType<TutorialStepProps>,
     canSkip: false,
     isRequired: true,
   },
@@ -83,15 +85,15 @@ export const TUTORIAL_STEPS: TutorialStep[] = [
     id: 'creation',
     title: 'Creating Issues',
     description: 'Step-by-step guide to submitting your first issue',
-    component: null as any,
+    component: null as unknown as React.ComponentType<TutorialStepProps>,
     canSkip: false,
     isRequired: true,
   },
   {
     id: 'completion',
-    title: 'You\'re Ready!',
-    description: 'Congratulations! You\'re ready to contribute',
-    component: null as any,
+    title: 'You&apos;re Ready!',
+    description: 'Congratulations! You&apos;re ready to contribute',
+    component: null as unknown as React.ComponentType<TutorialStepProps>,
     canSkip: false,
     isRequired: true,
   },

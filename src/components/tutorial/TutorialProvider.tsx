@@ -1,7 +1,7 @@
 'use client';
 
 import React, { createContext, useContext, useReducer, useEffect, ReactNode } from 'react';
-import { TutorialState, TutorialContextType, UserProgress, TUTORIAL_STEPS } from '@/types/tutorial';
+import { TutorialState, TutorialContextType, TUTORIAL_STEPS } from '@/types/tutorial';
 import { getTutorialState, saveTutorialState, getTutorialProgress, saveTutorialProgress } from '@/lib/utils';
 
 // Initial state
@@ -92,7 +92,7 @@ function tutorialReducer(state: TutorialState, action: TutorialAction): Tutorial
 
     case 'MARK_STEP_COMPLETED': {
       const stepId = action.payload;
-      let updatedProgress = { ...state.userProgress };
+      const updatedProgress = { ...state.userProgress };
 
       switch (stepId) {
         case 'welcome':

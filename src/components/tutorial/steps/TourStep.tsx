@@ -76,7 +76,7 @@ export function TourStep(props: TutorialStepProps) {
           variant="highlighted"
         >
           <p className="mb-4">
-            A repository (or "repo") is like a project folder that contains all the code, 
+            A repository (or &quot;repo&quot;) is like a project folder that contains all the code, 
             documentation, and history of a project. The Pond0x repository is where:
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
@@ -152,7 +152,7 @@ export function TourStep(props: TutorialStepProps) {
         {/* Labels Explanation */}
         <StepCard title="Understanding Labels">
           <p className="mb-4">
-            Labels are like hashtags that help organize issues. Here are some common ones you'll see:
+            Labels are like hashtags that help organize issues. Here are some common ones you&apos;ll see:
           </p>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
@@ -175,7 +175,7 @@ export function TourStep(props: TutorialStepProps) {
           </div>
           
           <p className="text-sm text-gray-400 mt-3">
-            💡 <strong>Tip:</strong> Look for "good first issue" labels if you want to contribute code later!
+            💡 <strong>Tip:</strong> Look for &quot;good first issue&quot; labels if you want to contribute code later!
           </p>
         </StepCard>
 
@@ -184,7 +184,7 @@ export function TourStep(props: TutorialStepProps) {
           <div className="text-center">
             <h4 className="font-semibold text-white mb-3">Ready to explore?</h4>
             <p className="text-gray-300 mb-4">
-              Take a moment to browse the Pond0x repository. Don't worry about understanding 
+              Take a moment to browse the Pond0x repository. Don&apos;t worry about understanding 
               everything – just get familiar with the layout!
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">

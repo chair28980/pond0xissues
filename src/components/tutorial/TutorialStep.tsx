@@ -21,12 +21,6 @@ export function TutorialStep({
   className,
   currentStep,
   totalSteps,
-  onNext,
-  onPrev,
-  onSkip,
-  onComplete,
-  isFirstStep,
-  isLastStep,
   showProgress = true,
 }: TutorialStepComponentProps) {
   
@@ -59,17 +53,17 @@ export function TutorialStep({
         highlightElements.push(element);
         
         // Store original styles for cleanup
-        (element as any).__originalStyles = originalStyles;
+        (element as HTMLElement & { __originalStyles?: Record<string, string> }).__originalStyles = originalStyles;
       }
     });
 
     return () => {
       // Cleanup highlights
       highlightElements.forEach(element => {
-        const originalStyles = (element as any).__originalStyles;
+        const originalStyles = (element as HTMLElement & { __originalStyles?: Record<string, string> }).__originalStyles;
         if (originalStyles) {
           Object.assign(element.style, originalStyles);
-          delete (element as any).__originalStyles;
+          delete (element as HTMLElement & { __originalStyles?: Record<string, string> }).__originalStyles;
         }
       });
     };

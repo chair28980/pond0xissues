@@ -75,7 +75,7 @@ export function CompletionStep(props: TutorialStepProps) {
             <div className="space-y-4">
               <div className="text-8xl">🎉</div>
               <h3 className="text-3xl font-bold gradient-text">
-                You're Ready to Contribute!
+                You&apos;re Ready to Contribute!
               </h3>
               <p className="text-lg text-gray-300 leading-relaxed">
                 You now know how to navigate GitHub, understand issues, and create helpful 
@@ -180,7 +180,7 @@ export function CompletionStep(props: TutorialStepProps) {
                   <Heart className="w-5 h-5 text-pink-400" />
                 </div>
                 <p className="text-gray-300 mb-4">
-                  By contributing to Pond0x, you're helping build something amazing. 
+                  By contributing to Pond0x, you&apos;re helping build something amazing. 
                   Every bug report, feature request, and question makes the project better 
                   for everyone in the community.
                 </p>

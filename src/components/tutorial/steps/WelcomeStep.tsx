@@ -18,11 +18,11 @@ export function WelcomeStep(props: TutorialStepProps) {
             <div className="space-y-4">
               <div className="text-6xl">👋</div>
               <h3 className="text-2xl font-bold text-white">
-                You're in the right place!
+                You&apos;re in the right place!
               </h3>
               <p className="text-lg text-gray-300 leading-relaxed">
                 Contributing to open source projects is easy. 
-                Whether you're reporting a bug, suggesting a feature, or just asking a question, 
+                Whether you&apos;re reporting a bug, suggesting a feature, or just asking a question, 
                 your voice matters in our community.
               </p>
             </div>
@@ -34,7 +34,7 @@ export function WelcomeStep(props: TutorialStepProps) {
               icon={<Github className="w-6 h-6" />}
               title="GitHub Basics"
             >
-              Learn what GitHub is and why it's awesome for collaboration
+              Learn what GitHub is and why it&apos;s awesome for collaboration
             </StepCard>
 
             <StepCard 
@@ -68,7 +68,7 @@ export function WelcomeStep(props: TutorialStepProps) {
                   No experience? No problem!
                 </h4>
                 <p className="text-gray-300 mb-3">
-                  This tutorial is designed for complete beginners. We'll explain everything 
+                  This tutorial is designed for complete beginners. We&apos;ll explain everything 
                   in simple terms, and you can always pause, skip, or restart at any time.
                 </p>
                 <div className="text-sm text-green-300">
@@ -85,7 +85,7 @@ export function WelcomeStep(props: TutorialStepProps) {
               <span>This tutorial takes about 5-10 minutes</span>
               <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
             </div>
-            <p>Take your time – there's no rush!</p>
+            <p>Take your time – there&apos;s no rush!</p>
           </div>
 
           {/* Next step preview */}

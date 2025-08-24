@@ -228,7 +228,7 @@ export function CreationStep(props: TutorialStepProps) {
                 Be patient, respectful, and constructive in all your interactions.
               </p>
               <div className="text-sm text-green-300">
-                ✨ <strong>Golden rule:</strong> Treat others how you'd like to be treated!
+                ✨ <strong>Golden rule:</strong> Treat others how you&apos;d like to be treated!
               </div>
             </div>
           </div>

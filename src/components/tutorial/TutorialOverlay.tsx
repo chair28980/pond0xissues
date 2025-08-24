@@ -32,7 +32,6 @@ export function TutorialOverlay() {
     prevStep,
     skipTutorial,
     markStepCompleted,
-    goToStep,
   } = useTutorial();
 
   const [isPaused, setIsPaused] = React.useState(false);
