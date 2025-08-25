@@ -5,6 +5,7 @@ import { QueryProvider } from '@/components/QueryProvider';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { TutorialProvider } from '@/components/tutorial/TutorialProvider';
 import { ConditionalTutorialOverlay } from '@/components/ConditionalTutorialOverlay';
+import { Analytics } from '@vercel/analytics/next';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
@@ -71,6 +72,7 @@ export default function RootLayout({
             </TutorialProvider>
           </QueryProvider>
         </ErrorBoundary>
+        <Analytics />
       </body>
     </html>
   );
